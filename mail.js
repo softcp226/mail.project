@@ -158,5 +158,5 @@ arrayOfEmails.forEach((email, index) => {
     } else {
       console.log(`Skipping empty email at index ${index}`);
     }
-  }, index * 600000); // Delay based on index (1 second per email)
+  }, index * 6000); // Delay based on index (1 second per email)
 });

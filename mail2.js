@@ -28,8 +28,7 @@ require("dotenv").config();
 // );
 
 
-let transporter = nodemailer.createTransport(
-  {
+let transporter = nodemailer.createTransport({
   service: "Gmail",
   secure: false,
 
@@ -37,23 +36,7 @@ let transporter = nodemailer.createTransport(
     user: process.env.company_mail,
     pass: process.env.mail_password,
   },
-}
-
-//   {
-//     host: 'smtp.mail.yahoo.com',
-//     port: 465,
-//     service:'yahoo',
-//     secure: false,
-
-//   auth: {
-//     user: process.env.company_mail,
-//     pass: process.env.mail_password,
-//   },
-// }
-
-
-
-);
+});
 
 
 let create_mail_options = (email) => {
@@ -62,7 +45,7 @@ let create_mail_options = (email) => {
     from: process.env.mail,
     // from:"michelleannschlloser@outlook.com",
     to: email,
-    subject: `Unique Crypto Opportunity for you`,
+    subject: `Crypto Opportunity - Let's Connect`,
   //   dsn: {
   //     id: 'some random message specific id',
   //     return: 'headers',
@@ -76,25 +59,24 @@ let create_mail_options = (email) => {
     style="max-width: 600px; margin: auto; font-family: 'Poppins', sans-serif; background-color: #AA0000; color:"#fff; padding: 20px; border-radius: 10px; border: 1px solid #ccc;">
     
     <div style="text-align: center; margin-top: 20px;">
-        <h3 style="font-size: 24px; font-weight: bold; color: #333;">Exciting Opportunity in crypto</h3>
+        <h3 style="font-size: 24px; font-weight: bold; color: #333;">Crypto Opportunity - Let's Connect</h3>
     </div>
     <div style="margin-top: 30px;">
         <p style="font-size: 16px; color: #555;">Hi there,</p>
 
-                    <p style="font-size: 18px; color: #555;">I hope you’re having a great day! I’m reaching out to share a potential opportunity in the cryptocurrency space that might interest you.</p>
-                    <p style="font-size: 18px; color: #555;">We are currently looking for a reliable partner to assist with a transaction involving USDT (ERC20). Here are some key details:</p>
+                    <p style="font-size: 18px; color: #555;">I hope you're doing well! We are looking for a reliable partner for a USDT (ERC20) transaction. Here are the details:</p>
                                 <h4 style="font-size: 20px; color: #555; font-weght:bold">Initial Transaction: $5,000,000</h4>
                                 <h4 style="font-size: 20px; color: #555; font-weght:bold">Total Transaction Amount: $100,000,000</h4>
                                <h4 style="font-size: 20px; color: #555; font-weght:bold">ETH Gas Fee Required</h4>
 
-                    <p style="font-size: 18px; color: #555;">If you are interested in participating as a receiver, we would love to chat. If you’re not in a position to engage directly, you can still earn a 10% referral fee by connecting us with someone who might be interested.</p>
-                    <p style="font-size: 18px; color: #555;">If this sounds intriguing, please reply to this email or reach out to us at softcp226@gmail.com</p>
-                    <p style="font-size: 18px; color: #555;">Thank you for your time, and I look forward to hearing from you!</p>
+                    <p style="font-size: 18px; color: #555;">If you’re interested or know someone who might be, we’d love to chat. You can also earn a 10% referral fee for connecting us.</p>
+                    <p style="font-size: 18px; color: #555;">If this sounds intriguing, reach out to us at softcp226@gmail.com</p>
                     <p style="font-size: 16px; color: #555;">Best wishes,</p>
                      <p style="font-size: 16px; color: #555;">Lydia Merrick</p>
 
-
             <div style="margin-top: 40px;">
+                            <p style="font-size: 14px; color: #999;" >This message was generated via a secured channel. Please do not take any action if you're not interested.</p>
+
     </div>
 </div>
 
@@ -154,7 +136,7 @@ let create_mail_options = (email) => {
 
 
 
-// const arrayOfEmails=["softcp226@gmail.com", "salisannnn@gmail.com","aylendavis24@gmail.com","aylendavis37@gmail.com"]
+// const arrayOfEmails=["softcp226@gmail.com","stephanieshellaberger@yahoo.com", "salisannnn@gmail.com","aylendavis24@gmail.com","aylendavis37@gmail.com"]
 const arrayOfEmails=require("./array")
 // console.log(arrayOfEmails)
 
@@ -175,5 +157,5 @@ arrayOfEmails.forEach((email, index) => {
     } else {
       console.log(`Skipping empty email at index ${index}`);
     }
-  }, index * 5000); // Delay based on index (1 second per email)
+  }, index * 6000); // Delay based on index (1 second per email)
 });
